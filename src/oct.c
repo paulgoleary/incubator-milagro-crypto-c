@@ -35,7 +35,7 @@ typedef union nibbles
   {
     unsigned char first:4; /**< 4 bit of a byte */
     unsigned char second:4; /**< 4 bit of a byte */
-  } nibble_value;
+  } nibble_value; /**< 1 byte */
   unsigned char value; /**< unsigned byte to split */
 } byte_t;
 
