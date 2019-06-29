@@ -1,62 +1,88 @@
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
+# This file will be configured to contain variables for CPack. These variables
+# should be set in the CMake list file of the project before CPack module is
+# included. The list of available CPACK_xxx variables and their associated
+# documentation may be obtained using
+#  cpack --help-variable-list
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-# KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
+# Some variables are common to all generators (e.g. CPACK_PACKAGE_NAME)
+# and some are specific to a generator
+# (e.g. CPACK_NSIS_EXTRA_INSTALL_COMMANDS). The generator specific variables
+# usually begin with CPACK_<GENNAME>_xxxx.
 
-include (InstallRequiredSystemLibraries)
 
-########################### General Settings ###########################
-set(CPACK_PACKAGE_NAME "AMCL")
-set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
-set(CPACK_PACKAGE_RELEASE 1)
-set(CPACK_DESCRIPTION_SUMMARY "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
-set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
-set(CPACK_PACKAGE_VENDOR "MILAGRO")
-set(CPACK_PACKAGE_CONTACT "dev@milagro.apache.org")
-set(CPACK_SYSTEM_NAME "${CMAKE_SYSTEM_NAME}")
+SET(CPACK_BINARY_7Z "")
+SET(CPACK_BINARY_BUNDLE "")
+SET(CPACK_BINARY_CYGWIN "")
+SET(CPACK_BINARY_DEB "")
+SET(CPACK_BINARY_DRAGNDROP "")
+SET(CPACK_BINARY_FREEBSD "")
+SET(CPACK_BINARY_IFW "")
+SET(CPACK_BINARY_NSIS "")
+SET(CPACK_BINARY_OSXX11 "")
+SET(CPACK_BINARY_PACKAGEMAKER "")
+SET(CPACK_BINARY_PRODUCTBUILD "")
+SET(CPACK_BINARY_RPM "")
+SET(CPACK_BINARY_STGZ "")
+SET(CPACK_BINARY_TBZ2 "")
+SET(CPACK_BINARY_TGZ "")
+SET(CPACK_BINARY_TXZ "")
+SET(CPACK_BINARY_TZ "")
+SET(CPACK_BINARY_WIX "")
+SET(CPACK_BINARY_ZIP "")
+SET(CPACK_BUILD_SOURCE_DIRS "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c;/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c")
+SET(CPACK_CMAKE_GENERATOR "Unix Makefiles")
+SET(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
+SET(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
+SET(CPACK_DESCRIPTION_SUMMARY "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/README.md")
+SET(CPACK_GENERATOR "RPM")
+SET(CPACK_INSTALL_CMAKE_PROJECTS "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c;AMCL;ALL;/")
+SET(CPACK_INSTALL_PREFIX "/usr/local")
+SET(CPACK_MODULE_PATH "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/cmake;/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/cmake")
+SET(CPACK_NSIS_DISPLAY_NAME "AMCL 0.1.0")
+SET(CPACK_NSIS_INSTALLER_ICON_CODE "")
+SET(CPACK_NSIS_INSTALLER_MUI_ICON_CODE "")
+SET(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES")
+SET(CPACK_NSIS_PACKAGE_NAME "AMCL 0.1.0")
+SET(CPACK_OUTPUT_CONFIG_FILE "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/CPackConfig.cmake")
+SET(CPACK_PACKAGE_CONTACT "dev@milagro.apache.org")
+SET(CPACK_PACKAGE_DEFAULT_LOCATION "/")
+SET(CPACK_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.10/Templates/CPack.GenericDescription.txt")
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "AMCL built using CMake")
+SET(CPACK_PACKAGE_FILE_NAME "AMCL-0.1.0-1.x86_64")
+SET(CPACK_PACKAGE_INSTALL_DIRECTORY "AMCL 0.1.0")
+SET(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "AMCL 0.1.0")
+SET(CPACK_PACKAGE_NAME "AMCL")
+SET(CPACK_PACKAGE_RELEASE "1")
+SET(CPACK_PACKAGE_RELOCATABLE "true")
+SET(CPACK_PACKAGE_VENDOR "MILAGRO")
+SET(CPACK_PACKAGE_VERSION "0.1.0")
+SET(CPACK_PACKAGE_VERSION_MAJOR "0")
+SET(CPACK_PACKAGE_VERSION_MINOR "1")
+SET(CPACK_PACKAGE_VERSION_PATCH "1")
+SET(CPACK_PACKAGING_INSTALL_PREFIX "/usr/local")
+SET(CPACK_RESOURCE_FILE_LICENSE "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/LICENSE")
+SET(CPACK_RESOURCE_FILE_README "/usr/share/cmake-3.10/Templates/CPack.GenericDescription.txt")
+SET(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-3.10/Templates/CPack.GenericWelcome.txt")
+SET(CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "/usr/local;/usr/local/bin;/usr/local/include;/usr/local/lib;;")
+SET(CPACK_SET_DESTDIR "OFF")
+SET(CPACK_SOURCE_7Z "")
+SET(CPACK_SOURCE_CYGWIN "")
+SET(CPACK_SOURCE_GENERATOR "TBZ2;TGZ;TXZ;TZ")
+SET(CPACK_SOURCE_OUTPUT_CONFIG_FILE "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/CPackSourceConfig.cmake")
+SET(CPACK_SOURCE_RPM "OFF")
+SET(CPACK_SOURCE_TBZ2 "ON")
+SET(CPACK_SOURCE_TGZ "ON")
+SET(CPACK_SOURCE_TXZ "ON")
+SET(CPACK_SOURCE_TZ "ON")
+SET(CPACK_SOURCE_ZIP "OFF")
+SET(CPACK_SYSTEM_NAME "Linux")
+SET(CPACK_TOPLEVEL_TAG "Linux")
+SET(CPACK_WIX_SIZEOF_VOID_P "8")
 
-if (BUILD_PYTHON)
-  set(CPACK_RPM_PACKAGE_REQUIRES "python >= 2.7.0")
-endif (BUILD_PYTHON)
-
-set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}-${CPACK_PACKAGE_VERSION}-${CPACK_PACKAGE_RELEASE}.${CMAKE_SYSTEM_PROCESSOR}")
-
-########################### Linux Settings ###########################
-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-  set(CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
-
-  # Prevents CPack from generating file conflicts
-  set(CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "${CPACK_PACKAGING_INSTALL_PREFIX}")
-  list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "${CPACK_PACKAGING_INSTALL_PREFIX}/bin")
-  list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "${CPACK_PACKAGING_INSTALL_PREFIX}/include")
-  list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "${CPACK_PACKAGING_INSTALL_PREFIX}/lib")
-  list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "${PYTHON_SITE_LIB}")
-  list(APPEND CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST_ADDITION "${PYTHON_SITE_PACKAGES}")
-  set(CPACK_GENERATOR "RPM")
+if(NOT CPACK_PROPERTIES_FILE)
+  set(CPACK_PROPERTIES_FILE "/home/jozoppi/milagro-c/sonar_review/incubator-milagro-crypto-c/CPackProperties.cmake")
 endif()
 
-########################### Windows Settings ###########################
-if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  set(CPACK_PACKAGE_INSTALL_DIRECTORY "AMCL")
-  set(CPACK_NSIS_MODIFY_PATH ON)
-  set(CPACK_PACKAGE_ICON "${CMAKE_SOURCE_DIR}/resources/icon\\\\icon.bmp")
-  set(CPACK_NSIS_MUI_ICON "${CMAKE_SOURCE_DIR}/resources/icon\\\\icon.ico")
-  set(CPACK_NSIS_MUI_UNIICON "${CMAKE_SOURCE_DIR}/resources/icon\\\\icon.ico")
-  set(CPACK_NSIS_HELP_LINK "http://milagro.apache.org/docs/milagro-intro")
-  set(CPACK_NSIS_URL_INFO_ABOUT "http://milagro.apache.org/docs/milagro-intro")
-  set(CPACK_NSIS_CONTACT "dev@milagro.apache.org")
+if(EXISTS ${CPACK_PROPERTIES_FILE})
+  include(${CPACK_PROPERTIES_FILE})
 endif()
-
-include (CPack)

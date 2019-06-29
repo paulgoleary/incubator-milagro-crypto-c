@@ -83,9 +83,10 @@ void amcl_hex2bin(const char *src, char *dst, int src_len)
 void amcl_bin2hex(char *src, char *dst, int src_len)
 {
     int i;
+    size_t max = 3;
     for (i = 0; i < src_len; i++)
     {
-        sprintf(&dst[i*2],"%02x", (unsigned char) src[i]);
+        snprintf(&dst[i*2],max,"%02x", (unsigned char) src[i]);
     }
 }
 
