@@ -36,9 +36,18 @@ int main()
 {
     int i,j,len=100;
     int len64 = ((len/3) + 2)*4+1, lenHex = 28*len;
-    char raw[256], bytes[len+1], bytes64[len64+1], bytesHex[lenHex+1], v[len], w[len];
+    char raw[256];
+    char bytes[len+1];
+    char bytes64[len64+1];
+    char bytesHex[lenHex+1];
+    char bytesHexN[lenHex+1];
+    char v[len];
+    char w[len];
+    char y[len];
+    
     octet V= {0,sizeof(v),v}, W= {0,sizeof(w),w};
     csprng rng;
+    octet Y={0,sizeof(y),y};
 
     /* Fake random source */
     RAND_clean(&rng);
@@ -88,6 +97,7 @@ int main()
         {
             OCT_rand(&W,&rng,len);
             OCT_copy(&V,&W);
+	    
             OCT_tobase64(bytes64,&W);
             OCT_frombase64(&W,bytes64);
             if(!OCT_comp(&V,&W))
@@ -97,16 +107,31 @@ int main()
             }
         }
 
-        /* test conversion to and from hex */
+        /* test conversion to and from hex with dst size */
         for (i = 0; i < 10; ++i)
         {
             OCT_rand(&W,&rng,len);
             OCT_copy(&V,&W);
-            OCT_toHex(&W,bytesHex);
-            OCT_fromHex(&W,bytesHex);
+            OCT_toHex_n(&W,bytesHexN, sizeof(bytesHexN));
+            OCT_fromHex(&W,bytesHexN);
             if(!OCT_comp(&V,&W))
             {
-                printf("ERROR converting to and from Hex OCTET\n");
+                printf("ERROR converting to and from Hex OCTET with size\n");
+                exit(EXIT_FAILURE);
+            }
+        }
+
+	
+        /* test conversion to and from hex */
+        for (i = 0; i < 10; ++i)
+        {
+            OCT_rand(&W,&rng,len);
+            OCT_copy(&Y,&W);
+            OCT_toHex(&W,bytesHex);
+            OCT_fromHex(&W,bytesHex);
+            if(!OCT_comp(&Y,&W))
+            {
+                printf("ERROR converting to and from Hex OCTET %s\n", bytesHex);
                 exit(EXIT_FAILURE);
             }
         }
