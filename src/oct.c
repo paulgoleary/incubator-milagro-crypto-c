@@ -27,17 +27,21 @@ static const char table_hex[] = { '0', '1', '2',
   '7', '8', '9',
   'a', 'b', 'c', 'd', 'e', 'f'
 };
-
+/**
+* @brief Nibble format used for octect conversion */
 typedef union nibbles
 {
   struct
   {
-    unsigned char first:4;
-    unsigned char second:4;
+    unsigned char first:4; /**< 4 bit of a byte */
+    unsigned char second:4; /**< 4 bit of a byte */
   } nibble_value;
-  unsigned char value;
+  unsigned char value; /**< unsigned byte to split */
 } byte_t;
 
+/**
+ * @brief Function that split a byte and convert to hex string using *        lookup table.
+ */
 static void
 uchar2hex (unsigned char c, char *dst, int idx)
 {
