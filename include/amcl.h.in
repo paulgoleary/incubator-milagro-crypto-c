@@ -366,12 +366,27 @@ extern void OCT_fromHex(octet *dst,char *src);
 	@param src Octet to be converted
  */
 extern void OCT_toHex(octet *src,char *dst);
+/**	@brief Convert an Octet to printable hex number ensuring boundaries check
+ *
+	@param dst hex value
+	@param src Octet to be converted
+	@param n: size to be used
+ */
+extern void OCT_toHex_n(octet *src, char* dst, size_t n);
+
 /**	@brief Convert an Octet to string
  *
 	@param dst string value
 	@param src Octet to be converted
  */
 extern void OCT_toStr(octet *src,char *dst);
+
+/**	@brief Convert an Octet to string ensuring boundaries check
+ *
+	@param dst string value
+	@param src Octet to be converted
+ */
+extern void OCT_toStr_n(octet *src, char* dst, size_t n);
 
 
 
