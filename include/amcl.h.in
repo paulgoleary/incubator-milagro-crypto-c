@@ -370,7 +370,7 @@ extern void OCT_toHex(octet *src,char *dst);
  *
 	@param dst hex value
 	@param src Octet to be converted
-	@param n: size to be used
+	@param n size of destination buffer
  */
 extern void OCT_toHex_n(octet *src, char* dst, size_t n);
 
@@ -385,6 +385,7 @@ extern void OCT_toStr(octet *src,char *dst);
  *
 	@param dst string value
 	@param src Octet to be converted
+	@parm n size of the destination buffer
  */
 extern void OCT_toStr_n(octet *src, char* dst, size_t n);
 
